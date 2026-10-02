@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "flowbite-react";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
 import { HiArrowUpRight } from "react-icons/hi2";
@@ -11,9 +12,10 @@ const menuItems = [
   { label: "Umroh", href: "/umroh" },
   { label: "Badal", href: "/badal" },
   { label: "Wisata", href: "/wisata" },
-  { label: "Form Pendaftaran", href: "/form-pendaftaran" },
-  { label: "Surat Rekomendasi Paspor", href: "/surat-rekomendasi-paspor" },
-  { label: "Surat Cuti Kerja/ Izin Sekolah", href: "/surat-cuti-kerja-izin-sekolah" },
+  { label: "Artikel", href: "/artikel" },
+  { label: "Form Pendaftaran", href: "/administrasi/form-pendaftaran" },
+  { label: "Surat Rekomendasi Paspor", href: "/administrasi/surat-rekom" },
+  { label: "Surat Cuti Kerja/ Izin Sekolah", href: "/administrasi/surat-cuti" },
   { label: "Tentang Kami", href: "/tentang-kami" },
 ];
 
@@ -51,7 +53,7 @@ export default function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white shadow-sm">
       <div className="relative mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:h-[84px] sm:px-8">
-        <a
+        <Link
           href="/"
           aria-label="Indorihlah Utama, beranda"
           className="flex items-center"
@@ -64,7 +66,7 @@ export default function SiteHeader() {
             priority
             className="h-10 w-auto object-contain sm:h-12"
           />
-        </a>
+        </Link>
 
         <Button
           ref={menuButtonRef}
