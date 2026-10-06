@@ -31,6 +31,23 @@ function FormField({
   );
 }
 
+function FieldGroup({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) {
+  return (
+    <section className="rounded-2xl bg-slate-50 p-4 sm:p-6">
+      <h2 className="mb-5 text-sm font-bold text-slate-900">{title}</h2>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+        {children}
+      </div>
+    </section>
+  );
+}
+
 export default function RecommendationForm() {
   const [formMessage, setFormMessage] = useState("");
 
@@ -42,8 +59,8 @@ export default function RecommendationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-7">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <FieldGroup title="Data pribadi">
         <FormField id="full-name" label="Nama Lengkap">
           <TextInput
             id="full-name"
@@ -102,7 +119,9 @@ export default function RecommendationForm() {
             className={inputClassName}
           />
         </FormField>
+      </FieldGroup>
 
+      <FieldGroup title="Rencana perjalanan">
         <FormField
           id="departure-date"
           label="Rencana tanggal keberangkatan umroh/haji"
@@ -115,7 +134,7 @@ export default function RecommendationForm() {
             className={inputClassName}
           />
         </FormField>
-      </div>
+      </FieldGroup>
 
       <div className="border-t border-slate-100 pt-6">
         <p className="mb-4 text-xs text-slate-500">

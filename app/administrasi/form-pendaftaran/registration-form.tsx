@@ -37,6 +37,23 @@ function FormField({
   );
 }
 
+function FieldGroup({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) {
+  return (
+    <section className="rounded-2xl bg-slate-50 p-4 sm:p-6">
+      <h2 className="mb-5 text-sm font-bold text-slate-900">{title}</h2>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+        {children}
+      </div>
+    </section>
+  );
+}
+
 export default function RegistrationForm() {
   const [formMessage, setFormMessage] = useState("");
 
@@ -48,8 +65,8 @@ export default function RegistrationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-7">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <FieldGroup title="Kontak">
         <FormField id="phone" label="No. Handphone / WhatsApp yg aktif" required>
           <TextInput
             id="phone"
@@ -73,7 +90,9 @@ export default function RegistrationForm() {
             className={inputClassName}
           />
         </FormField>
+      </FieldGroup>
 
+      <FieldGroup title="Data jamaah">
         <FormField id="full-name" label="Nama Lengkap" required>
           <TextInput
             id="full-name"
@@ -97,7 +116,9 @@ export default function RegistrationForm() {
             className={inputClassName}
           />
         </FormField>
+      </FieldGroup>
 
+      <FieldGroup title="Alamat dan identitas">
         <FormField id="address" label="Alamat Lengkap" wide required>
           <Textarea
             id="address"
@@ -159,6 +180,9 @@ export default function RegistrationForm() {
           />
         </FormField>
 
+      </FieldGroup>
+
+      <FieldGroup title="Pilihan perjalanan">
         <FormField id="package" label="Paket yang dipilih" wide required>
           <Select
             id="package"
@@ -181,7 +205,7 @@ export default function RegistrationForm() {
             <option>Tabungan Umroh</option>
           </Select>
         </FormField>
-      </div>
+      </FieldGroup>
 
       <div className="border-t border-slate-100 pt-6">
         <p className="mb-4 text-xs text-slate-500">

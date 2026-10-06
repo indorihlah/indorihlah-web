@@ -58,8 +58,8 @@ const articles: {
     excerpt:
       "Telusuri sejarah Masjid Quba dan tempat-tempat penuh makna dalam perjalanan ziarah di Madinah.",
     image:
-      "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1000&h=750&q=85",
-    imageAlt: "Masjid dengan kubah dan menara",
+      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1000&h=750&q=85",
+    imageAlt: "Masjid dan jamaah di Madinah",
   },
   {
     title: "Persiapan Dokumen Haji: Panduan Lengkap Sebelum Mendaftar",
@@ -109,8 +109,8 @@ const articles: {
     category: "Info dan Tips",
     service: "Umroh",
     image:
-      "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1000&h=750&q=85",
-    imageAlt: "Arsitektur masjid di Tanah Suci",
+      "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1000&h=750&q=85",
+    imageAlt: "Jamaah melaksanakan ibadah umroh",
   },
   {
     title: "Menapaki Jejak Sejarah Islam di Madinah",
@@ -206,10 +206,10 @@ export default function ArticlesListing() {
           Artikel
         </h1>
 
-        <div className="flex flex-col gap-5 border-b border-slate-200 pb-4 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-5 border-b border-slate-100 pb-5 lg:flex-row lg:items-center lg:justify-between">
           <nav
             aria-label="Kategori artikel"
-            className="-mx-1 flex min-w-0 flex-wrap gap-x-5 gap-y-2 px-1 sm:gap-x-7"
+            className="-mx-1 flex min-w-0 flex-wrap gap-2 px-1"
           >
             {categories.map((category) => {
               const isActive = activeCategory === category;
@@ -220,10 +220,10 @@ export default function ArticlesListing() {
                   type="button"
                   aria-pressed={isActive}
                   onClick={() => selectCategory(category)}
-                  className={`min-h-10 shrink-0 whitespace-nowrap border-b-2 px-1 pb-1 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 ${
+                  className={`min-h-10 shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 ${
                     isActive
-                      ? "border-blue-600 font-bold text-blue-700"
-                      : "border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-900"
+                      ? "bg-blue-600 font-semibold text-white"
+                      : "bg-slate-50 text-slate-600 hover:bg-blue-50 hover:text-blue-700"
                   }`}
                 >
                   {category}
@@ -279,9 +279,7 @@ export default function ArticlesListing() {
           <div className="grid grid-cols-1 gap-x-7 gap-y-10 md:grid-cols-3 lg:gap-x-8 lg:gap-y-12">
             {visibleArticles.map((article) => (
               <article key={article.title} className="group relative mt-4">
-                <div
-                  className="relative h-64 w-full overflow-hidden rounded-2xl bg-slate-100"
-                >
+                <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl bg-slate-100">
                   <Image
                     src={article.image}
                     alt={article.imageAlt}
@@ -298,7 +296,7 @@ export default function ArticlesListing() {
                       : article.category}
                   </span>
                 </div>
-                <div className="relative -mt-16 mx-4 flex min-h-[260px] flex-col rounded-xl bg-white p-6 shadow-lg transition duration-300 group-hover:shadow-2xl">
+                <div className="relative -mt-12 mx-3 flex min-h-[260px] flex-col rounded-2xl bg-white p-5 shadow-sm transition duration-300 group-hover:shadow-md sm:mx-4 sm:p-6">
                   <div className="mb-3 flex items-center gap-2 text-sm text-gray-500">
                     <FaRegCalendarDays aria-hidden="true" className="size-3.5 text-blue-600" />
                     <time>{article.date}</time>

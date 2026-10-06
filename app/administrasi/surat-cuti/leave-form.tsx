@@ -37,6 +37,23 @@ function FormField({
   );
 }
 
+function FieldGroup({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) {
+  return (
+    <section className="rounded-2xl bg-slate-50 p-4 sm:p-6">
+      <h2 className="mb-5 text-sm font-bold text-slate-900">{title}</h2>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+        {children}
+      </div>
+    </section>
+  );
+}
+
 export default function LeaveForm() {
   const [formMessage, setFormMessage] = useState("");
 
@@ -48,8 +65,8 @@ export default function LeaveForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-7">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <FieldGroup title="Data pemohon">
         <FormField id="full-name" label="Nama Lengkap">
           <TextInput
             id="full-name"
@@ -96,7 +113,9 @@ export default function LeaveForm() {
             className={inputClassName}
           />
         </FormField>
+      </FieldGroup>
 
+      <FieldGroup title="Identitas dan alamat">
         <FormField
           id="identity-number"
           label="NIP (Nomor Induk Kepegawaian) / NIM (Nomor Induk Mahasiswa)"
@@ -122,7 +141,9 @@ export default function LeaveForm() {
             className={inputClassName}
           />
         </FormField>
+      </FieldGroup>
 
+      <FieldGroup title="Rencana cuti">
         <FormField id="leave-start" label="Tanggal cuti dimulai">
           <TextInput
             id="leave-start"
@@ -142,7 +163,9 @@ export default function LeaveForm() {
             className={inputClassName}
           />
         </FormField>
+      </FieldGroup>
 
+      <FieldGroup title="Catatan tambahan">
         <FormField id="notes" label="Catatan" wide optional>
           <Textarea
             id="notes"
@@ -152,7 +175,7 @@ export default function LeaveForm() {
             className={inputClassName}
           />
         </FormField>
-      </div>
+      </FieldGroup>
 
       <div className="border-t border-slate-100 pt-6">
         <p className="mb-4 text-xs text-slate-500">

@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/app/components/site-header";
+import { ContactSection } from "@/app/components/landing-sections";
 import {
-  AboutSection,
-  ContactSection,
-  FeaturesSection,
-  HeroSection,
-  PackagesSection,
-  PartnersSection,
-  TestimonialSection,
-} from "@/app/components/landing-sections";
+  HomeFeaturesSection,
+  HomeHeroSection,
+  HomePackagesSection,
+  HomeTestimonialsSection,
+} from "@/app/components/home-sections";
 
 export const metadata: Metadata = {
   title: "Indorihlah: Beranda",
@@ -26,14 +24,12 @@ export default function Home() {
     <>
       <SiteHeader />
       <main id="beranda" className="pt-[76px] sm:pt-[84px]">
-        <HeroSection />
-        <FeaturesSection />
-        <PackagesSection />
-        <TestimonialSection />
-        <PartnersSection />
-        <AboutSection />
-        <ContactSection />
+        <HomeHeroSection />
+        <HomeFeaturesSection />
+        <HomePackagesSection />
+        <HomeTestimonialsSection />
       </main>
+      <ContactSection />
     </>
   );
 }

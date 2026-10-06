@@ -121,71 +121,49 @@ function WhoWeAreSection() {
               yang menemani langkah dengan perhatian dan ketulusan.
             </p>
           </div>
+          <div className="mt-8 rounded-2xl bg-white p-5 shadow-sm sm:p-6">
+            <h3 className="text-lg font-bold text-slate-900">Visi Kami</h3>
+            <p className="mt-2 text-sm leading-7 text-slate-600">
+              Menjadi penyelenggara perjalanan ibadah Haji dan Umroh terpercaya
+              di Indonesia yang memberikan kenyamanan, keamanan, dan keberkahan
+              bagi setiap jamaah menuju Tanah Suci.
+            </p>
+            <h3 className="mt-6 text-lg font-bold text-slate-900">Misi Kami</h3>
+            <ul className="mt-3 space-y-2.5 text-sm leading-6 text-slate-600">
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-blue-600" />
+                <span>Memberikan layanan yang profesional dan berorientasi pada jamaah.</span>
+              </li>
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-blue-600" />
+                <span>Menyediakan bimbingan manasik dan pendampingan ibadah yang menyeluruh.</span>
+              </li>
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-blue-600" />
+                <span>Menjaga kemitraan resmi, kenyamanan, dan amanah di setiap perjalanan.</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div
-          role="img"
-          aria-label="Sekelompok jamaah mengenakan ihram di Masjidil Haram"
-          className="min-h-[320px] rounded-2xl bg-slate-200 bg-cover bg-center shadow-xl shadow-slate-900/10 sm:min-h-[440px]"
-          style={{
-            backgroundImage:
-              "linear-gradient(145deg, rgba(15, 23, 42, 0.03), rgba(15, 23, 42, 0.12)), url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1400&h=1500&q=90')",
-          }}
-        />
-      </div>
-    </section>
-  );
-}
-
-function VisionMissionSection() {
-  return (
-    <section
-      aria-labelledby="vision-title"
-      className="bg-white py-24"
-    >
-      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-600">
-            Arah dan komitmen kami
-          </p>
-          <h2
-            id="vision-title"
-            className="text-3xl font-bold text-slate-900 sm:text-4xl"
-          >
-            Visi Kami
-          </h2>
-          <p className="mt-5 text-base leading-8 text-gray-700 sm:text-lg">
-            Menjadi penyelenggara perjalanan ibadah Haji dan Umroh terpercaya di
-            Indonesia yang memberikan kenyamanan, keamanan, dan keberkahan bagi
-            setiap jamaah menuju Tanah Suci.
-          </p>
-        </div>
-
-        <div className="mx-auto mt-14 max-w-2xl border-t border-slate-200 pt-12 sm:mt-16 sm:pt-14">
-          <h3 className="text-center text-2xl font-bold text-slate-900 sm:text-3xl">
-            Misi Kami
-          </h3>
-          <ul className="mt-7 space-y-4 text-sm leading-7 text-slate-700 sm:text-base">
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="mt-3 size-2 shrink-0 rounded-full bg-blue-600" />
-              <span>Memberikan pelayanan perjalanan ibadah yang profesional, ramah, dan berorientasi pada kebutuhan jamaah.</span>
-            </li>
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="mt-3 size-2 shrink-0 rounded-full bg-blue-600" />
-              <span>Menyediakan bimbingan manasik yang menyeluruh agar jamaah lebih siap menjalankan rangkaian ibadah.</span>
-            </li>
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="mt-3 size-2 shrink-0 rounded-full bg-blue-600" />
-              <span>Menjaga kemitraan resmi dan terpercaya untuk mendukung perjalanan yang aman dan tertata.</span>
-            </li>
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="mt-3 size-2 shrink-0 rounded-full bg-blue-600" />
-              <span>Memprioritaskan kenyamanan, keamanan, dan ketenangan jamaah dalam setiap tahap perjalanan.</span>
-            </li>
-            <li className="flex gap-3">
-              <span aria-hidden="true" className="mt-3 size-2 shrink-0 rounded-full bg-blue-600" />
-              <span>Menumbuhkan kepercayaan dan menjaga amanah melalui komunikasi yang jujur serta pelayanan yang bertanggung jawab.</span>
-            </li>
-          </ul>
+        <div className="relative mx-auto min-h-[360px] w-full max-w-xl md:min-h-[620px]">
+          <div
+            role="img"
+            aria-label="Sekelompok jamaah mengenakan ihram di Masjidil Haram"
+            className="absolute inset-x-0 top-0 h-[78%] rounded-2xl bg-slate-200 bg-cover bg-center shadow-md shadow-slate-900/10"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1400&h=1500&q=90')",
+            }}
+          />
+          <div
+            role="img"
+            aria-label="Ka'bah di Masjidil Haram"
+            className="absolute bottom-0 right-2 h-[38%] w-[58%] rounded-2xl border-4 border-slate-50 bg-slate-200 bg-cover bg-center shadow-lg shadow-slate-900/15 sm:right-0"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=900&h=700&q=85')",
+            }}
+          />
         </div>
       </div>
     </section>
@@ -243,7 +221,6 @@ export default function AboutPage() {
       <main className="pt-[76px] sm:pt-[84px]">
         <HeroSection />
         <WhoWeAreSection />
-        <VisionMissionSection />
         <ValuesSection />
       </main>
       <ContactSection />

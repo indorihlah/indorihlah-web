@@ -16,8 +16,8 @@ export default function RecommendationPage() {
     <>
       <SiteHeader />
       <main className="bg-slate-50 pt-[76px] sm:pt-[84px]">
-        <section className="px-4 py-12 sm:px-6 sm:py-16">
-          <div className="mx-auto max-w-4xl">
+        <section className="px-4 py-14 sm:px-6 sm:py-20">
+          <div className="mx-auto max-w-3xl">
             <div className="mb-8">
               <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-600">
                 Administrasi Indorihlah Utama
@@ -31,7 +31,7 @@ export default function RecommendationPage() {
               </p>
             </div>
 
-            <div className="rounded-xl bg-white p-6 shadow-lg shadow-slate-900/5 ring-1 ring-slate-900/5 md:p-10">
+            <div className="rounded-2xl bg-white p-5 shadow-sm shadow-slate-900/5 sm:p-7 md:p-9">
               <RecommendationForm />
             </div>
 
